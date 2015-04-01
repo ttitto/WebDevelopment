@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.30501.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DistanceCalculator.WcfService", "DistanceCalculator.WcfService\DistanceCalculator.WcfService.csproj", "{91BF25E2-99AA-4663-AB97-D0B926901466}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DistanceCalculator.Models", "DistanceCalculator.Models\DistanceCalculator.Models.csproj", "{54E64AF7-40B3-4E63-9A3B-7CE96A1629F7}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{91BF25E2-99AA-4663-AB97-D0B926901466}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{91BF25E2-99AA-4663-AB97-D0B926901466}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{91BF25E2-99AA-4663-AB97-D0B926901466}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{91BF25E2-99AA-4663-AB97-D0B926901466}.Release|Any CPU.Build.0 = Release|Any CPU
+		{54E64AF7-40B3-4E63-9A3B-7CE96A1629F7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{54E64AF7-40B3-4E63-9A3B-7CE96A1629F7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{54E64AF7-40B3-4E63-9A3B-7CE96A1629F7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{54E64AF7-40B3-4E63-9A3B-7CE96A1629F7}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
