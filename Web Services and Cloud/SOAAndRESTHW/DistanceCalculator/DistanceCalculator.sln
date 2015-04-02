@@ -7,6 +7,13 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DistanceCalculator.WcfServi
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DistanceCalculator.Models", "DistanceCalculator.Models\DistanceCalculator.Models.csproj", "{54E64AF7-40B3-4E63-9A3B-7CE96A1629F7}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DistanceCalculator.WcfService.Host", "DistanceCalculator.WcfService.Host\DistanceCalculator.WcfService.Host.csproj", "{838803EF-9B05-4F4C-943C-650D7446F38B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DistanceCalculator.WcfService.ConsoleClient", "DistanceCalculator.WcfService.ConsoleClient\DistanceCalculator.WcfService.ConsoleClient.csproj", "{4C9C1AB1-1434-41E0-B1A3-36E7D8D2ECA0}"
+	ProjectSection(ProjectDependencies) = postProject
+		{91BF25E2-99AA-4663-AB97-D0B926901466} = {91BF25E2-99AA-4663-AB97-D0B926901466}
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +28,14 @@ Global
 		{54E64AF7-40B3-4E63-9A3B-7CE96A1629F7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{54E64AF7-40B3-4E63-9A3B-7CE96A1629F7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{54E64AF7-40B3-4E63-9A3B-7CE96A1629F7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{838803EF-9B05-4F4C-943C-650D7446F38B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{838803EF-9B05-4F4C-943C-650D7446F38B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{838803EF-9B05-4F4C-943C-650D7446F38B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{838803EF-9B05-4F4C-943C-650D7446F38B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4C9C1AB1-1434-41E0-B1A3-36E7D8D2ECA0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4C9C1AB1-1434-41E0-B1A3-36E7D8D2ECA0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4C9C1AB1-1434-41E0-B1A3-36E7D8D2ECA0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4C9C1AB1-1434-41E0-B1A3-36E7D8D2ECA0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="10f4af65-7da1-4597-a1e2-acf476249bd1" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:3305/DistanceCalculatorService.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="DistanceCalculatorService.wsdl" MetadataType="Wsdl" ID="5024b685-3c2c-48db-9f26-d0aa7df9e1a0" SourceId="1" SourceUrl="http://localhost:3305/DistanceCalculatorService.svc?wsdl" />
+    <MetadataFile FileName="DistanceCalculatorService.xsd" MetadataType="Schema" ID="715e8927-adaf-4399-a01f-9f4f8e8611eb" SourceId="1" SourceUrl="http://localhost:3305/DistanceCalculatorService.svc?xsd=xsd2" />
+    <MetadataFile FileName="DistanceCalculatorService.disco" MetadataType="Disco" ID="ff8bec2b-3667-4332-8d65-671b3a485d6e" SourceId="1" SourceUrl="http://localhost:3305/DistanceCalculatorService.svc?disco" />
+    <MetadataFile FileName="DistanceCalculatorService1.xsd" MetadataType="Schema" ID="3861de0e-b0cc-4aca-b763-4a86d7556cc3" SourceId="1" SourceUrl="http://localhost:3305/DistanceCalculatorService.svc?xsd=xsd0" />
+    <MetadataFile FileName="DistanceCalculatorService2.xsd" MetadataType="Schema" ID="98a7e3f9-01d4-42a3-8e11-80685a8d97ce" SourceId="1" SourceUrl="http://localhost:3305/DistanceCalculatorService.svc?xsd=xsd1" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>
