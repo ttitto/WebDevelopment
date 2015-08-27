@@ -1,0 +1,56 @@
+﻿namespace BlogSystem.ConsoleClient
+{
+    using System;
+    using System.Data.Entity;
+    using System.Linq;
+    using System.Runtime.CompilerServices;
+
+    using BlogSystem.Data;
+    using BlogSystem.Data.Migrations;
+    using BlogSystem.Data.Repositories;
+    using BlogSystem.Models;
+
+    public class Program
+    {
+        public static void Main()
+        {
+            var db = new BlogSystemDbContext();
+            var data = new BlogSystemData();
+
+            var user = new User() { Id = 1 };
+            db.Users.Attach(user);
+            db.SaveChanges();
+
+
+            if (data.Users.Find(u => u.Username == "VGeorgiev").FirstOrDefault() == null)
+            {
+                data.Users.Add(new User
+                {
+                    Username = "VGeorgiev",
+                    Gender = Gender.Male,
+                    RegistrationDate = DateTime.Now,
+                    FullName = "Vladimir Georgiev",
+                    Birthday = new DateTime(1876, 11, 12),
+                    ContactInfo = new UserContactInfo
+                    {
+                        Tweeter = "@VGeorgiew",
+                        Facebook = "VladiGeorgiev",
+                        PhoneNumber = "0888888888",
+                        Skype = "SkypeProfile"
+                    }
+                });
+            }
+            data.SaveChanges();
+
+            //var vlado = data.Users.All().FirstOrDefault(x => x.FullName == "Vladimir Georgiev");
+            //vlado.FullName = "VG";
+
+            data.SaveChanges();
+
+            //  Console.WriteLine(data.Comments.Find(c => c.Id == 1).FirstOrDefault().Content);
+
+            //            data.Users.Delete(user);
+            //            data.SaveChanges();
+        }
+    }
+}

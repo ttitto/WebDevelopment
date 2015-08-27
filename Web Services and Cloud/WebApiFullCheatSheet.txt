@@ -1,0 +1,77 @@
+Create .Models class library and install to it Entity framework
+Create Models classes with annotations to construct the correct DB
+Create .WebApi project, update the conn. string in the web.config file and upgrade all packages with Nuget PM
+Create .Data class library and move to it the dbContext class from the IdentityModels class. Move also the ApplicationUser class to .Models project. Install necessary packages with Nuget
+Add IdbSets to the DbContext class and Enable migrations. Add migrations strategy to the Startup.cs.
+Copy Repository pattern and UnitOfWork.
+Install Ninject.Web.WebApi and Ninject.Web.WebApi.OwinHost to the WebApi project and copy  app.UseNinjectMiddleware(CreateKernel).UseNinjectWebApi(GlobalConfiguration.Configuration); to Startup.Configuration and 
+
+        private static StandardKernel CreateKernel()
+        {
+            var kernel = new StandardKernel();
+            kernel.Load(Assembly.GetExecutingAssembly());
+
+            RegisterMappings(kernel);
+            return kernel;
+        }
+
+        private static void RegisterMappings(StandardKernel kernel)
+        {
+           // kernel.Bind<IMusicAppData>().To<MusicAppData>().WithConstructorArgument("context", new MusicAppDbContext());
+           // kernel.Bind<IUserProvider>().To<AspNetUserProvider>();
+        }
+into the Startup class.
+AUTOMAPPER - Create folder Infrastructure with subfolder ModelsMapping and copy there the IHaveCustomMappings and IMapFrom interfaces: 
+ public interface IHaveCustomMappings
+    {
+        void CreateMappings(IConfiguration configuration);
+    }
+IMapFrom<T> is empty interface.
+From Global.asax call AutoMapperConfig.Execute(); AutoMapperConfig.cs should be copied to App_Start with content:
+"""""
+ public static void Execute()
+        {
+            var types = Assembly.GetExecutingAssembly().GetExportedTypes();
+
+            LoadStandardMappings(types);
+
+            LoadCustomMappings(types);
+        }
+
+        private static void LoadStandardMappings(IEnumerable<Type> types)
+        {
+            var maps = (from t in types
+                        from i in t.GetInterfaces()
+                        where i.IsGenericType && i.GetGenericTypeDefinition() == typeof(IMapFrom<>) &&
+                              !t.IsAbstract &&
+                              !t.IsInterface
+                        select new
+                        {
+                            Source = i.GetGenericArguments()[0],
+                            Destination = t
+                        });
+
+            foreach (var map in maps)
+            {
+                Mapper.CreateMap(map.Source, map.Destination);
+                Mapper.CreateMap(map.Destination, map.Source);
+            }
+        }
+
+        private static void LoadCustomMappings(IEnumerable<Type> types)
+        {
+            var maps = (from t in types
+                        from i in t.GetInterfaces()
+                        where typeof(IHaveCustomMappings).IsAssignableFrom(t) &&
+                              !t.IsAbstract &&
+                              !t.IsInterface
+                        select (IHaveCustomMappings)Activator.CreateInstance(t));
+
+            foreach (var map in maps)
+            {
+                map.CreateMappings(Mapper.Configuration);
+            }
+        }
+"""""
+Seed data if needed.
+
