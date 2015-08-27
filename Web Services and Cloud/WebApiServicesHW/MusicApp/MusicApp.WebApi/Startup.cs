@@ -1,20 +1,17 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using Microsoft.Owin;
-using Owin;
-using Ninject;
-using Ninject.Web.Common.OwinHost;
-using Ninject.Web.WebApi.OwinHost;
-using System.Reflection;
-using System.Web.Http;
-using MusicApp.Data;
-using MusicApp.WebApi.Infrastructure;
-
+﻿using Microsoft.Owin;
 [assembly: OwinStartup(typeof(MusicApp.WebApi.Startup))]
 
 namespace MusicApp.WebApi
 {
+    using Owin;
+    using Ninject;
+    using Ninject.Web.Common.OwinHost;
+    using Ninject.Web.WebApi.OwinHost;
+    using System.Reflection;
+    using System.Web.Http;
+    using MusicApp.Data;
+    using MusicApp.WebApi.Infrastructure;
+
     public partial class Startup
     {
         public void Configuration(IAppBuilder app)
