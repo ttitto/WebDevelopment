@@ -1,0 +1,7 @@
+﻿<div data-ng-controller="DetailsController">
+    <h2>{{movie.Title}}</h2>
+    <div>Released in: {{movie.ReleaseYear}}</div>
+    <div>{{movie.Runtime}} minutes long.</div>
+    <button data-ng-click="edit()">Edit</button>
+    <div data-ng-include="'/Client/views/edit.html'"></div>
+</div>

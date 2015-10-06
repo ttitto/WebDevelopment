@@ -1,0 +1,15 @@
+﻿<div data-ng-controller="ListController">
+    <table class="table">
+        <tr data-ng-repeat="movie in movies">
+            <td>{{movie.Title}}</td>
+            <td>
+                <a href="#/details/{{movie.Id}}">Details</a>
+                <button class="btn btn-default" data-ng-click="delete(movie)">
+                    Delete
+                </button>
+            </td>
+        </tr>
+    </table>
+    <button class="btn btn-default" data-ng-click="create()">Create</button>
+    <div data-ng-include="'/Client/views/edit.html'"></div>
+</div>
